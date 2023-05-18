@@ -10,7 +10,11 @@
 
 int main(int argc, char** argv)
 {
-	printf("Hello World!\n");
+    int i;
+
+    scanf("%d", &i);
+    printf("%d\n", i);
+    printf("Hello World!\n");
 
 	return 0;
 }
