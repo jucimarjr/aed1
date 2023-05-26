@@ -2,19 +2,6 @@
 
 Este documento define um padrão de codificação em linguagem C que visa promover a legibilidade, organização e clareza do código. O padrão segue as boas práticas amplamente adotadas na comunidade de desenvolvimento em C.
 
-## Comentário de Identificação
-
-- Cada arquivo de código deve começar com um comentário de identificação.
-- O comentário deve conter informações como o nome do curso, disciplina, nome completo do aluno e sua matrícula.
-
-Exemplo:
-```c
-/* Curso: Engenharia de Software
-   Disciplina: Programação em C
-   Aluno: João da Silva
-   Matrícula: 123456789 */
-```
-
 ## Nomenclatura de Arquivos
 
 - Utilize letras minúsculas para o nome do arquivo.
@@ -23,65 +10,121 @@ Exemplo:
 
 Exemplo: `meu_programa.c`, `utilidades_matematicas.c`
 
-## Nomenclatura de Variáveis
+## Comentário de Identificação
 
-- Utilize letras minúsculas para o nome das variáveis.
+- Cada arquivo de código deve começar com um comentário de identificação.
+- O comentário deve conter informações como o nome do curso, disciplina, nome completo do aluno e sua matrícula.
+
+Exemplo:
+```c
+/* 
+   Curso: Sistemas de Informação
+   Disciplina: Algoritmos e Estruturas de Dados
+   Aluno: Caio Rolando da Rocha
+   Matrícula: 123456789
+*/
+```
+
+## Função `main`
+
+- Utilize a seguinte assinatura para a função `main`: `int main(int argc, char *argv[])`.
+
+Exemplo:
+```c
+int main(int argc, char *argv[])
+{
+    // Código da função main
+
+    return 0;
+}
+```
+
+## Nomenclatura de Variáveis e Funções
+
+- Utilize letras minúsculas para o nome das variáveis e funções.
 - Separe as palavras com underscores ("_") para maior clareza e legibilidade.
-- Escolha nomes descritivos e significativos que indiquem claramente o propósito ou conteúdo da variável.
-- Evite nomes genéricos, como `x`, `temp`, `var1`, pois eles não fornecem informações suficientes sobre o uso da variável.
+- Escolha nomes descritivos e significativos que indiquem claramente o propósito ou conteúdo da variável ou função.
+- Evite nomes genéricos, como `x`, `temp`, `var1`, pois eles não fornecem informações suficientes sobre o uso da variável ou função.
 - Seja consistente no uso de singular ou plural para nomes de variáveis, dependendo do contexto.
 - Evite o uso de abreviações excessivas que possam comprometer a clareza do código.
 
-Exemplo:
+Exemplo (variáveis):
 ```c
 int idade;
 float preco_unitario;
 char nome_completo[50];
 ```
 
-## Nomenclatura de Funções
-
-- Utilize letras minúsculas para o nome das funções.
-- Separe as palavras com underscores ("_") para maior clareza e legibilidade.
-- Escolha nomes descritivos que indiquem claramente a ação ou comportamento da função.
-- Evite nomes genéricos ou abreviações pouco claras.
-- Seja consistente na escolha de verbos que reflitam a ação realizada pela função.
-
-Exemplo:
+Exemplo (funções):
 ```c
 void calcular_media();
 int obter_tamanho_array(int[] array);
+```
+
+## Nomenclatura de Constantes e Defines
+
+- Utilize letras maiúsculas para o nome das constantes e defines.
+- Separe as palavras com underscores ("_") para maior clareza e legibilidade.
+- Escolha nomes descritivos e significativos que indiquem claramente o propósito ou valor da constante ou define.
+
+Exemplo:
+```c
+#define TAMANHO_MAXIMO 100
+const float PI = 3.14159;
+```
+
+## Chaves de Delimitação de Código
+
+- Utilize as chaves `{}` somente quando houver mais de uma instrução dentro de um bloco de código.
+- Coloque as chaves em uma nova linha, logo abaixo da instrução que as precede.
+- Utilize uma linha em branco antes e depois das chaves para separar claramente o bloco de código.
+
+Exemplo (uma instrução):
+```c
+if (idade >= 18)
+    printf("Você é maior de idade.\n");
+```
+
+Exemplo (várias instruções):
+```c
+for (int i = 0; i < tamanho; i++)
+{
+    printf("%d\n", array[i]);
+    printf("Iteração %d\n", i);
+}
+```
+
+## Definição de Vetor
+
+- Os colchetes `[]` devem ser colocados do lado direito do nome da variável ao definir um vetor.
+
+Exemplo:
+```c
+int numeros[10];
+float matriz[3][3];
 ```
 
 ## Instruções de Controle (if, for, while)
 
 - Utilize espaços entre os elementos para melhorar a legibilidade do código.
 - Coloque os parênteses em torno da condição das instruções `if` para maior clareza.
-- Utilize chaves `{}` em uma nova linha para delimitar o bloco de código das instruções `if`, `for` e `while`, mesmo quando contiver apenas uma única instrução.
+- Utilize chaves `{}` somente quando houver mais de uma instrução dentro do bloco.
 
 Exemplo (if):
 ```c
 if (idade >= 18)
-{
     printf("Você é maior de idade.\n");
-}
 else
-{
     printf("Você é menor de idade.\n");
-}
 ```
 
 Exemplo (for):
 ```c
 for (int i = 0; i < tamanho; i++)
-{
     printf("%d\n", array[i]);
-}
 ```
 
-Exemplo (while
-
-):
+Exemplo (while):
 ```c
 while (contador < limite)
 {
@@ -106,56 +149,34 @@ void calcular_media()
 }
 
 if (idade >= 18)
-{
     printf("Você é maior de idade.\n");
-}
 else
-{
     printf("Você é menor de idade.\n");
-}
 ```
 
-## Chaves de Delimitação de Código
+## Comentários
 
-- As chaves `{}` devem ser colocadas em uma nova linha, logo abaixo da instrução que as precede.
-- Utilize uma linha em branco antes e depois das chaves para separar claramente o bloco de código.
+- Utilize comentários para explicar o propósito e o funcionamento do código.
+- Adicione comentários relevantes em trechos de código complexos, algoritmos importantes ou partes obscuras que possam dificultar a compreensão.
+- Mantenha os comentários atualizados conforme o código for evoluindo e mudando.
 
 Exemplo:
 ```c
-if (idade >= 18)
+// Calcula a média dos elementos do vetor
+float calcular_media(int vetor[], int tamanho)
 {
-    printf("Você é maior de idade.\n");
+    // Variável para armazenar a soma dos elementos
+    int soma = 0;
+
+    // Itera sobre o vetor e soma os elementos
+    for (int i = 0; i < tamanho; i++)
+        soma += vetor[i];
+
+    // Calcula a média e retorna o valor
+    float media = (float)soma / tamanho;
+    
+    return media;
 }
-else
-{
-    printf("Você é menor de idade.\n");
-}
-```
-
-## Função `main`
-
-- Utilize a seguinte assinatura para a função `main`: `int main(int argc, char *argv[])`.
-- Utilize chaves `{}` em uma nova linha para delimitar o bloco de código da função `main`, mesmo quando contiver apenas uma única instrução.
-
-Exemplo:
-```c
-int main(int argc, char *argv[])
-{
-    // Código da função main
-
-    return 0;
-}
-```
-
-## Definição de Vetor
-
-- Os colchetes `[]` devem ser colocados do lado direito do nome da variável ao definir um vetor.
-
-Exemplo:
-```c
-int numeros[10];
-float matriz[3][3];
 ```
 
 Esse padrão de codificação segue as melhores práticas para escrever código em linguagem C, tornando-o mais legível, organizado e fácil de manter.
-```
