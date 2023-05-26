@@ -1,4 +1,3 @@
-```markdown
 # Padrão de Codificação em C
 
 Este documento define um padrão de codificação em linguagem C que visa promover a legibilidade, organização e clareza do código. O padrão segue as boas práticas amplamente adotadas na comunidade de desenvolvimento em C.
