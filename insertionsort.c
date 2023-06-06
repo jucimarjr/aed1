@@ -2,7 +2,7 @@
     Nome:   Jucimar Maia da Silva Jr
     Mat:    7389217389123
     
-    Bubblesort
+    InsertionSort
 
 */
 
@@ -39,8 +39,8 @@ void insertionsort(int vetor[], int n)
 int main(int argc, char** argv)
 {
     //int vetor[] = {64, 34, 25, 12, 22, 11, 90, 87, 100, 01};
-    //int vetor[] = {01, 11, 12, 22, 25, 34, 64, 87, 90, 100};
-    int vetor[] = {100, 90, 87, 64, 34, 25, 22, 12, 11, 01};
+    int vetor[] = {01, 11, 12, 22, 25, 34, 64, 87, 90, 100};
+    //int vetor[] = {100, 90, 87, 64, 34, 25, 22, 12, 11, 01};
     int n = 10;
     
     insertionsort(vetor, n);
