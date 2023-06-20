@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 // Função para realizar busca binária
-int busca_binaria(int vetor[], int tamanho, int elemento) {
+int busca_binaria(int vetor[], int tamanho, int elemento)
+{
     int esquerda = 0;
     int direita = tamanho - 1;
 
