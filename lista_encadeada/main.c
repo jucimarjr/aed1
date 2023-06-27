@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lista_encadeada.h"
 
 int main(int argc, char** argv)
@@ -23,6 +22,9 @@ int main(int argc, char** argv)
 	lista = excluir( lista );
 	
 	imprimir( lista );
+
+	printf("%d\n", buscar(lista, 59) );
+	printf("%d\n", buscar(lista, 55) );
 
 	return 0;
 }

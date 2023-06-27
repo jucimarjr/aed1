@@ -34,11 +34,8 @@ No* excluir( No *lista )
 	No *temp;
 
     temp = lista;
-
     lista = lista->prox;
-
 	temp->prox = NULL;
-
     free(temp);
 
 	return lista;
@@ -59,4 +56,22 @@ void imprimir( No *lista )
 	}
 	
 	printf("\n");
+}
+
+/*--------------------------------------------------------------------------*/
+int buscar( No *lista, int dado )
+{
+	No *temp;
+
+	temp = lista;
+	
+	while( temp != NULL )
+	{
+		if (temp->dado == dado)
+			return 1;
+
+		temp = temp->prox;
+	}
+	
+	return 0;
 }
