@@ -37,6 +37,8 @@ No* excluir( No *lista )
 
     lista = lista->prox;
 
+	temp->prox = NULL;
+
     free(temp);
 
 	return lista;
