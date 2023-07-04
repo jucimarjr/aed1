@@ -23,5 +23,17 @@ int main(int argc, char** argv)
 	
 	imprimir( d );
 
+	d->lista = excluir( d );
+	d->lista = excluir( d );
+	d->lista = excluir( d );
+	
+	imprimir( d );
+
+	d->lista = excluir( d );
+	d->lista = excluir( d );
+	d->lista = excluir( d );
+	
+	imprimir( d );
+
 	return 0;
 }

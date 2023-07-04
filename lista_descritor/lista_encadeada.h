@@ -67,13 +67,16 @@ No* excluir( Descritor *d )
 {
 	No *temp;
 
-    temp = d->lista;
-    d->lista = d->lista->prox;
-	
-	temp->prox = NULL;
-    free(temp);
+	if ( d->qtde > 0 )
+	{
+		temp = d->lista;
+		d->lista = d->lista->prox;
+		
+		temp->prox = NULL;
+		free(temp);
 
-	d->qtde--;
+		d->qtde--;
+	}
 
 	return d->lista;
 
