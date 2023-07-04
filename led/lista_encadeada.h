@@ -10,45 +10,45 @@ struct no
 	No* prox;
 };
 
-/* definição do descritor */
-typedef struct descritor
-{
-	int qtde;
-	No* lista;
-} Descritor;
-
-
 /*--------------------------------------------------------------------------*/
-Descritor* criar()
+No* criar()
 {
-	Descritor *d;
-
-	d = (Descritor *)malloc( sizeof( Descritor ) );
-	d->qtde = 0;
-	d->lista = NULL;
-	
-	return d;
+	return NULL;
 }
 
 /*--------------------------------------------------------------------------*/
-No* inserir( Descritor *d, int dado )
+No* inserir( No *lista, int dado )
 {
 	No *novo;
 
 	novo = (No *)malloc( sizeof( No ) );
 	novo->dado = dado;
-	novo->prox = d->lista;
-	d->qtde++;
+	novo->prox = lista;
 	
 	return novo;
 }
 
 /*--------------------------------------------------------------------------*/
-void imprimir( Descritor *d )
+No* excluir( No *lista )
 {
 	No *temp;
 
-	temp = d->lista;
+    temp = lista;
+    lista = lista->prox;
+	
+	temp->prox = NULL;
+    free(temp);
+
+	return lista;
+
+}
+
+/*--------------------------------------------------------------------------*/
+void imprimir( No *lista )
+{
+	No *temp;
+
+	temp = lista;
 	
 	while( temp != NULL )
 	{
@@ -57,25 +57,22 @@ void imprimir( Descritor *d )
 	}
 	
 	printf("\n");
-	printf("%d \n", d->qtde );
-
 }
 
-
-/*----------------------------------------------------------------------*/
-No* excluir( Descritor *d )
+/*--------------------------------------------------------------------------*/
+int buscar( No *lista, int dado )
 {
 	No *temp;
 
-    temp = d->lista;
-    d->lista = d->lista->prox;
+	temp = lista;
 	
-	temp->prox = NULL;
-    free(temp);
+	while( temp != NULL )
+	{
+		if (temp->dado == dado)
+			return 1;
 
-	d->qtde--;
-
-	return d->lista;
-
+		temp = temp->prox;
+	}
+	
+	return 0;
 }
-
