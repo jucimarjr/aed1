@@ -2,26 +2,29 @@
 
 int main(int argc, char** argv)
 {
-    Descritor *d;
+    No *lista;
 
-	d = criar();
+	lista = criar(); //lista = NULL;
 	
-	d->lista = inserir( d, 15 );
-	d->lista = inserir( d, 25 );
-	d->lista = inserir( d, 45 );
-	d->lista = inserir( d, 55 );
-	d->lista = inserir( d, 51 );
-	d->lista = inserir( d, 59 );
-	d->lista = inserir( d, 53 );
-	d->lista = inserir( d, 12 );
+	lista = inserir( lista, 15 ); // lista = novo;
+	lista = inserir( lista, 25 );
+	lista = inserir( lista, 45 );
+	lista = inserir( lista, 55 );
+	lista = inserir( lista, 51 );
+	lista = inserir( lista, 59 );
+	lista = inserir( lista, 53 );
+	lista = inserir( lista, 12 );
 	
-	imprimir( d );
+	imprimir( lista );
 
-	d->lista = excluir( d );
-	d->lista = excluir( d );
-	d->lista = excluir( d );
+	lista = excluir( lista );
+	lista = excluir( lista );
+	lista = excluir( lista );
 	
-	imprimir( d );
+	imprimir( lista );
+
+	//printf("%d\n", buscar(lista, 59) );
+	//printf("%d\n", buscar(lista, 55) );
 
 	return 0;
 }
